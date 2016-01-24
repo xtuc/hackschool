@@ -16,20 +16,24 @@ sap.ui.define([
 				var date = data[3].getValue();
 
 				var payload = {
-					"tweet" : tweet,
-					"date" : date
+					"content" : tweet
 				};
 
 				jQuery.ajax({
 					type : "POST",
-					url : "/",
+					url : "http://10.142.113.55:3000/",
 					data : payload,
-					success : this.onPostSuccess
+					success : this.onPostSuccess.bind(this)
 				});
 			},
 
 			onPostSuccess : function(){
-				debugger;
+				this.getOwnerComponent().getRouter().navTo("allTweets");
+				this.getModel().loadData("http://10.142.113.55:3000/");
+			},
+
+			onNavBack : function() {
+				window.history.go(-1);
 			}
 
 		})

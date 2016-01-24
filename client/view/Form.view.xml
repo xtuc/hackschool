@@ -6,7 +6,7 @@
 		xmlns:l="sap.ui.layout"
 		xmlns:f="sap.ui.layout.form"
 		height="100%">
-	<Page id="listPage">
+	<Page id="listPage" showNavButton="true" navButtonPress="onNavBack">
 		<content>
 			<l:Grid
 					defaultSpan="L12 M12 S12"
@@ -26,16 +26,11 @@
 								  columnsM="1"
 								  class="editableForm">
 						<f:content>
-							<Label text="Test to tweet" />
+							<Label text="Text to tweet" />
 							<TextArea value="{text}" />
-							<Label text="Scheduled for" />
-							<DateTimeInput
-									type="DateTime"
-									placeholder="Enter Date &amp; Time ..."
-									class="sapUiSmallMarginBottom" />
 						</f:content>
 					</f:SimpleForm>
-					<Button text="Press to schedule" press="onSendPress"/>
+					<Button text="TWEET IT" press="onSendPress"/>
 				</l:content>
 			</l:Grid>
 		</content>

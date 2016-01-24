@@ -5,10 +5,15 @@
 		xmlns="sap.m"
 		xmlns:u="sap.ui.unified"
 		height="100%">
-	<Page id="homePage">
+	<Page id="homePage" title="Tweet Maschine">
 		<content>
 			<Image src="http://www.hackerstolz.de/wp-content/uploads/2015/07/hackerstolz-logo.svg"/>
-			<Text text="Tweet Maschine"/>
+			<Panel>
+				<content>
+					<Button text="all tweets" press="toList"/>
+					<Button text="new tweet" press="toNewTweet"/>
+				</content>
+			</Panel>
 		</content>
 	</Page>
 

@@ -20,7 +20,7 @@ sap.ui.define([
                 UIComponent.prototype.init.apply(this, arguments);
                 this.getRouter().initialize();
 
-                var tweetModel = new JSONModel("model/data.json");
+                var tweetModel = new JSONModel("http://10.142.113.55:3000/");
                 this.setModel(tweetModel, "tweets");
             }
         });

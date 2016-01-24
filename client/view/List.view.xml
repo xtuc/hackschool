@@ -4,7 +4,7 @@
 		displayBlock="true"
 		xmlns="sap.m"
 		height="100%">
-	<Page id="myPage" title="All Tweets from Hackerstolz">
+	<Page id="myPage" title="All Tweets from Hackerstolz" showNavButton="true" navButtonPress="onNavBack">
 		<content>
 			<List items="{path:'tweets>/tweets'}">
 				<items>

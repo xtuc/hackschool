@@ -6,6 +6,10 @@ sap.ui.define([
 		return Controller.extend('ui5.dev.controller.List', {
 
 			onInit : function () {
+			},
+
+			onNavBack : function() {
+				window.history.go(-1);
 			}
 
 		})
