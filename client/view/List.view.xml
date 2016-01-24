@@ -4,11 +4,25 @@
 		displayBlock="true"
 		xmlns="sap.m"
 		height="100%">
-	<Page id="myPage">
+	<Page id="myPage" title="All Tweets from Hackerstolz">
 		<content>
-			<Text text="Hi from tweet bot List"/>
+			<List items="{path:'tweets>/tweets'}">
+				<items>
+					<FeedListItem
+							sender="HackerStolz tweets"
+							senderPress=""
+							icon="https://pbs.twimg.com/profile_images/567225169773490176/kUgpC0qc_400x400.png"
+							info="scheduled Tweet"
+							timestamp="{tweets>date}"
+							text="{tweets>text}" />
+				</items>
+			</List>
 		</content>
-
+		<footer>
+			<Toolbar>
+				<Text text="Some text here"/>
+			</Toolbar>
+		</footer>
 	</Page>
 
 </mvc:View>

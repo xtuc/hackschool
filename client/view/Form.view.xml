@@ -3,10 +3,41 @@
 		xmlns:mvc="sap.ui.core.mvc"
 		displayBlock="true"
 		xmlns="sap.m"
+		xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form"
 		height="100%">
 	<Page id="listPage">
 		<content>
-			<Text text="Hi from tweet bot Form"/>
+			<l:Grid
+					defaultSpan="L12 M12 S12"
+					width="auto">
+				<l:content>
+					<f:SimpleForm id="newTweetForm"
+								  minWidth="1024"
+								  maxContainerCols="2"
+								  editable="true"
+								  layout="ResponsiveGridLayout"
+								  title="Create a new Tweet"
+								  labelSpanL="1"
+								  labelSpanM="1"
+								  emptySpanL="4"
+								  emptySpanM="4"
+								  columnsL="1"
+								  columnsM="1"
+								  class="editableForm">
+						<f:content>
+							<Label text="Test to tweet" />
+							<TextArea value="{text}" />
+							<Label text="Scheduled for" />
+							<DateTimeInput
+									type="DateTime"
+									placeholder="Enter Date &amp; Time ..."
+									class="sapUiSmallMarginBottom" />
+						</f:content>
+					</f:SimpleForm>
+					<Button text="Press to schedule" press="onSendPress"/>
+				</l:content>
+			</l:Grid>
 		</content>
 	</Page>
 
