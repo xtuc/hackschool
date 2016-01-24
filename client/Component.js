@@ -19,6 +19,9 @@ sap.ui.define([
                 this.setModel(deviceModel, "device");
                 UIComponent.prototype.init.apply(this, arguments);
                 this.getRouter().initialize();
+
+                var tweetModel = new JSONModel("model/data.json");
+                this.setModel(tweetModel, "tweets");
             }
         });
 
