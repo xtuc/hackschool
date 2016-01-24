@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/xtuc/hackschool/issues"
   },
-  "homepage": "https://github.com/xtuc/hackschool#readme"
+  "homepage": "https://github.com/xtuc/hackschool#readme",
+  "dependencies": {
+    "hubot-twitter": "^2.1.1"
+  }
 }
