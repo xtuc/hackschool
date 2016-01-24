@@ -1,6 +1,8 @@
 import express from "express"
 import cors from "cors"
 import bodyParser from "body-parser"
+import morgan from "morgan"
+
 // import * as twitterSchema from "../common/mongodb"
 import * as twitter from "../common/twitterapi"
 
@@ -12,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 app.use(cors());
+
+app.use(morgan('combined'))
 
 app.get('/', function (req, res) {
 
