@@ -1,0 +1,14 @@
+<mvc:View
+		controllerName="ui5.dev.controller.List"
+		xmlns:mvc="sap.ui.core.mvc"
+		displayBlock="true"
+		xmlns="sap.m"
+		height="100%">
+	<Page id="myPage">
+		<content>
+			<Text text="Hi from tweet bot List"/>
+		</content>
+
+	</Page>
+
+</mvc:View>

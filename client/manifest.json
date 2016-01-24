@@ -1,0 +1,119 @@
+
+{
+  "_version": "1.1.0",
+
+  "sap.app": {
+    "_version": "1.1.0",
+    "id": "ui5.dev",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+
+  "sap.ui": {
+    "_version": "1.1.0",
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_hcb",
+      "sap_bluecrystal"
+    ]
+  },
+
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "rootView": "ui5.dev.view.App",
+
+    "dependencies": {
+      "minUI5Version": "1.30.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {}
+      }
+    },
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5.dev.i18n.i18n"
+        }
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "ui5.dev.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": "notFound"
+        }
+      },
+
+      "routes": [
+        {
+          "pattern": "",
+          "name": "home",
+          "target": "home"
+        },
+        {
+          "pattern": "newTweet",
+          "name": "newTweet",
+          "target": "newTweet"
+        },
+        {
+          "pattern" : "allTweets",
+          "name": "allTweets",
+          "target": "list"
+        }
+      ],
+
+      "targets": {
+        "home": {
+          "viewName": "Home",
+          "viewId": "home",
+          "viewLevel": 1
+        },
+        "newTweet": {
+          "viewName": "Form",
+          "viewId": "Form",
+          "viewLevel": "2"
+        },
+        "list": {
+          "viewName": "List",
+          "viewID": "List",
+          "viewLevel": "2"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        }
+      }
+    }
+  }
+}

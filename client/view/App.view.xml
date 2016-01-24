@@ -1,0 +1,10 @@
+<mvc:View
+        controllerName="ui5.dev.controller.App"
+        xmlns:mvc="sap.ui.core.mvc"
+        displayBlock="true"
+        xmlns="sap.m"
+        xmlns:u="sap.ui.unified"
+        height="100%">
+    <App id="app"/>
+
+</mvc:View>
