@@ -17,8 +17,8 @@ export const getTweets = (cb) => {
 	});
 }
 
-export const postTweet = (content) => {
-	client.post('statuses/update', { status: content }, (error, tweet, response) => {
+export const postTweet = (content, cb) => {
+	client.post('statuses/update', { status: content }, (err, tweet, response) => {
 		return cb(err, tweets);
 	});
 }

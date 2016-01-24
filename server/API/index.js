@@ -1,8 +1,15 @@
 import express from "express"
+import bodyParser from "body-parser"
 // import * as twitterSchema from "../common/mongodb"
 import * as twitter from "../common/twitterapi"
 
 const app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.get('/', function (req, res) {
 
@@ -17,9 +24,19 @@ app.get('/', function (req, res) {
 });
 
 app.post("/", function (req, res) {
-	const content = req.param("content");
+	const content = req.body.content;
 
-	console.log(content);
+	if(!content)
+		return res.json({ error: "content argument is required" });
+
+	twitter.postTweet(content, (err, tweet) => {
+		if(err) {
+			console.log(err);
+			return res.status(500).json({ error: "Internal server error" });
+		}
+
+		return res.json({ tweet: tweet })
+	})
 });
 
 app.listen(3000, () => {
