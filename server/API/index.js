@@ -16,6 +16,12 @@ app.get('/', function (req, res) {
 	});
 });
 
+app.post("/", function (req, res) {
+	const content = req.param("content");
+
+	console.log(content);
+});
+
 app.listen(3000, () => {
 	console.log("Server listening on port 3000!");
 });
