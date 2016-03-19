@@ -7,17 +7,22 @@
 
 install dependencies
 --> npm install
+
 install babel and babel command line tooling
 --> npm install -g babel
 --> npm install -g babel-cli
+
 create a file config.js into server/API and add twitter credentials:
+
 !! Do not upload this file!!
+
 {
     consumer_key: '',
     consumer_secret: '',
     access_token_key: '',
     access_token_secret: ''
 }
+
 open a shell in server/API and run command:
 --> babel-node index.js
 
