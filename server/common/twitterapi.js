@@ -4,8 +4,8 @@ const twitterConfig = require("../API/config.js");
 const client = new Twitter(twitterConfig);
 
 export const getTweets = (cb) => {
-	client.get('search/tweets', { q: 'node.js' }, (err, tweets, response) => {
-
+	client.get('statuses/user_timeline', { q: 'node.js' }, (err, tweets, response) => {
+/*
 		tweets = tweets.statuses.map(tweet => {
 			return {
 				text: tweet.text,
@@ -14,6 +14,9 @@ export const getTweets = (cb) => {
 		})
 
 		return cb(err, tweets);
+*/
+		console.log(tweets);
+	return cb(err,tweets);
 	});
 }
 
