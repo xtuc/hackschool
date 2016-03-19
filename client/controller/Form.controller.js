@@ -13,7 +13,7 @@ sap.ui.define([
 				var data = this.getView().byId("newTweetForm").getContent();
 
 				var tweet = data[1].getValue();
-				var date = data[3].getValue();
+				//var date = data[3].getValue();
 
 				var payload = {
 					"content" : tweet
@@ -29,7 +29,7 @@ sap.ui.define([
 
 			onPostSuccess : function(){
 				this.getOwnerComponent().getRouter().navTo("allTweets");
-				this.getModel().loadData("http://10.142.113.55:3000/");
+				this.getView().getModel().loadData("http://localhost:3000/");
 			},
 
 			onNavBack : function() {

@@ -1,6 +1,6 @@
 import Twitter from "twitter"
  
-const twitterConfig = require("./config.js");
+const twitterConfig = require("../API/config.js");
 const client = new Twitter(twitterConfig);
 
 export const getTweets = (cb) => {
